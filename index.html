@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>my first program</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- START MENU -->
+  <div id="start-menu" class="page active">
+    <div class="page-frame">
+      <header class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Welcome to</p>
+          <h1>my first program</h1>
+          <p class="subtitle">A bright website about Aaditya Upreti's first project.</p>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="button-container">
+          <button class="large-button" onclick="goToAbout()">About me</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ABOUT ME PAGE -->
+  <div id="about-page" class="page">
+    <div class="page-frame">
+      <button class="back-button" onclick="goHome()">← Back</button>
+
+      <main class="content">
+        <section class="about-card">
+          <div class="photo-card">
+            <img
+              src="aaditya_photo.jpg"
+              alt="Aaditya Upreti"
+              class="profile-photo"
+              onerror="this.style.display='none'; document.getElementById('photo-note').innerText='Save your photo as aaditya_photo.jpg in this folder.';"
+            />
+            <p id="photo-note" class="photo-note">Your photo will appear here.</p>
+          </div>
+
+          <div class="about-text">
+            <h2>About me</h2>
+            <p>Hello my name is Aaditya Upreti. I am studying in grade 7.</p>
+            <p>I am learning VSC from 3 months.</p>
+            <p>And this program you see here is my first program.</p>
+            <p>I am utilizing my time making software for productivity on holidays.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Built with HTML and CSS — welcome to my first website!</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function goToAbout() {
+      document.getElementById("start-menu").classList.remove("active");
+      document.getElementById("about-page").classList.add("active");
+    }
+
+    function goHome() {
+      document.getElementById("about-page").classList.remove("active");
+      document.getElementById("start-menu").classList.add("active");
+    }
+  </script>
+</body>
+</html>
+
