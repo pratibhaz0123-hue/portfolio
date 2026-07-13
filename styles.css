@@ -1,0 +1,363 @@
+:root {
+  --bg: #0b3d91;
+  --panel: #fdc472;
+  --panel-soft: #fff1d6;
+  --text: #071d49;
+  --text-light: #243447;
+  --accent: #fb7185;
+  --shadow: rgba(4, 30, 66, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #b3d9ff 50%, #4a90e2 100%);
+  color: var(--text);
+}
+
+.page-frame {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.large-button {
+  padding: 24px 64px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffb3c1 0%, #fb7185 100%);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(4, 30, 66, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.large-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(4, 30, 66, 0.35);
+}
+
+.large-button:active {
+  transform: translateY(-1px);
+}
+
+.back-button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #95c8ff;
+  color: #1d3557;
+  cursor: pointer;
+  margin-bottom: 24px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.back-button:hover {
+  background: #7dd3fc;
+}
+
+.hero {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(253, 196, 114, 0.96));
+  border-radius: 28px;
+  padding: 32px 28px;
+  box-shadow: 0 26px 50px var(--shadow);
+  max-width: 980px;
+  margin: 0 auto 24px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #4f46e5;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 4vw, 4rem);
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.subtitle {
+  margin: 18px 0 0;
+  font-size: 1rem;
+  color: #334155;
+  max-width: 620px;
+}
+
+.content {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.about-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  gap: 24px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  box-shadow: 0 20px 40px var(--shadow);
+  padding: 28px;
+}
+
+.photo-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fce9c0 100%);
+  border-radius: 24px;
+  padding: 18px;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 24px;
+  border: 4px solid #f8d7a8;
+  object-fit: cover;
+}
+
+.photo-note {
+  margin: 16px 0 0;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.about-text {
+  padding: 8px 4px;
+}
+
+.about-text h2 {
+  margin: 0 0 16px;
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.about-text p {
+  margin: 0 0 14px;
+  line-height: 1.7;
+  color: var(--text-light);
+  font-size: 1.04rem;
+}
+
+.footer {
+  max-width: 980px;
+  margin: 24px auto 0;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.game-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#game-container {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 24px 24px;
+}
+
+#game-canvas {
+  width: 100%;
+  min-height: 680px;
+  background: #071527;
+  border-radius: 28px;
+  display: block;
+}
+
+.game-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  color: #0f172a;
+}
+
+.game-panel h2 {
+  margin-top: 0;
+}
+
+#three-game-page {
+  display: grid;
+  grid-template-columns: 1.9fr 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 24px 24px;
+}
+
+.game-canvas-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  border-radius: 28px;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.32);
+}
+
+#three-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.scene-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 380px;
+  z-index: 5;
+}
+
+.portrait-card,
+.mission-card {
+  background: rgba(12, 20, 45, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f0f5ff;
+  border-radius: 22px;
+  padding: 18px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.portrait-card {
+  display: flex;
+  gap: 16px;
+}
+
+.portrait-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid #fff;
+}
+
+.portrait-card h3,
+.mission-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+}
+
+.mission-card p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+#three-game-page .game-panel {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+  padding: 28px;
+}
+
+.mission-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #1d2939;
+}
+
+.mission-list li {
+  margin-bottom: 10px;
+}
+
+.active-mission {
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+#danger-text {
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.danger-meter-bar {
+  width: 100%;
+  height: 18px;
+  background: #253444;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.danger-meter-bar span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff2a2a, #ffcc00);
+  transition: width 0.2s ease;
+}
+
+.hud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(4, 30, 66, 0.12);
+}
+
+.hud div {
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  #game-container {
+    grid-template-columns: 1fr;
+  }
+
+  .game-header {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 24px 20px;
+  }
+}
